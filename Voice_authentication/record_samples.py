@@ -1,3 +1,5 @@
+#Code by R K Shakya
+
 import os
 import sounddevice as sd
 import scipy.io.wavfile as wav
@@ -15,8 +17,9 @@ if __name__ == "__main__":
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
 
-    num_samples = 10  # Number of samples to record
+    num_samples = 25  # Number of samples to record 
     for i in range(num_samples):
+        input(f"Press Enter to start recording sample {i + 1}...")
         filename = os.path.join(folder_path, f'reference_{i + 1}.wav')
         record_audio(filename, duration=5)
-        print(f"Sample {i + 1} recorded.")
+        print(f"Sample {i + 1} recorded.\n")
